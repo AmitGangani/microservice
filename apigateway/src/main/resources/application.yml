@@ -11,11 +11,16 @@ spring:
         webmvc:
           routes:
             - id: user-service-route
-              uri: http://localhost:8081
+              uri: lb://user-service
               predicates:
                 - Path=/users/**
 
             - id: order-service-route
-              uri: http://localhost:8082
+              uri: lb://order-service
               predicates:
                 - Path=/orders/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
