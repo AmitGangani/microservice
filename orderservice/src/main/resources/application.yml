@@ -1,21 +1,5 @@
-server:
-  port: 8082
-
 spring:
   application:
     name: order-service
-
-  datasource:
-    url: jdbc:h2:mem:testdb
-    username: amit
-    password: amit
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
+  config:
+    import: optional:configserver:http://localhost:8888

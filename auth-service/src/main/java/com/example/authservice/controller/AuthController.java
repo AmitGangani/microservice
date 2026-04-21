@@ -1,0 +1,29 @@
+package com.example.authservice.controller;
+
+import com.example.authservice.dto.*;
+import com.example.authservice.service.AuthService;
+import jakarta.validation.Valid;
+import org.springframework.web.bind.annotation.*;
+
+@RestController
+@RequestMapping("/auth")
+public class AuthController {
+
+    private final AuthService authService;
+
+    public AuthController(AuthService authService) {
+        this.authService = authService;
+    }
+
+    @PostMapping("/register")
+    public String register(@Valid @RequestBody RegisterRequest request) {
+        authService.register(request);
+        return "User registered successfully";
+    }
+
+    @PostMapping("/login")
+    public AuthResponse login(@Valid @RequestBody LoginRequest request) {
+        String token = authService.login(request);
+        return new AuthResponse(token);
+    }
+}

@@ -1,0 +1,20 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: user-service
+
+  h2:
+    console:
+      enabled: true
+
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: amit
+    password: amit
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
