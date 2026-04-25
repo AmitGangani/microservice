@@ -18,3 +18,8 @@ spring:
 jwt:
   secret: mySuperSecretKeyForJwtTokenGenerationMySuperSecretKey12345
   expiration: 3600000
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/

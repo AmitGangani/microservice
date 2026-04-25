@@ -1,0 +1,64 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-ApiGatewayApplication<apigateway>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.apigateway.ApiGatewayApplication",
+            "projectName": "apigateway",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-AuthServiceApplication<auth-service>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.authservice.AuthServiceApplication",
+            "projectName": "auth-service",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-ConfigServerApplication<config-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.config_server.ConfigServerApplication",
+            "projectName": "config-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-DiscoveryServerApplication<discovery-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.discovery_server.DiscoveryServerApplication",
+            "projectName": "discovery-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-OrderserviceApplication<orderservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.orderservice.OrderserviceApplication",
+            "projectName": "orderservice",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-UserServiceApplication<userservice>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.example.userservice.UserServiceApplication",
+            "projectName": "userservice",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

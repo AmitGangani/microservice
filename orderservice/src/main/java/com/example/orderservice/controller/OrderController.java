@@ -32,4 +32,9 @@ public class OrderController {
     public List<Order> getAllOrders() {
         return orderService.getAllOrders();
     }
+
+    @GetMapping("/admin/summary")
+    public String adminSummary() {
+        return "Order summary admin summary";
+    }
 }

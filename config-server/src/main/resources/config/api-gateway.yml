@@ -10,6 +10,11 @@ spring:
       server:
         webmvc:
           routes:
+            - id: auth-service-route
+              uri: lb://auth-service
+              predicates:
+                - Path=/auth/**
+
             - id: user-service-route
               uri: lb://user-service
               predicates:

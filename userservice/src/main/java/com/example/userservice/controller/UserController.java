@@ -32,4 +32,9 @@ public class UserController {
     public List<User> getUsers() {
         return userService.getAllUsers();
     }
+
+    @GetMapping("/admin/report")
+    public String adminReport() {
+        return "User service admin report";
+    }
 }
