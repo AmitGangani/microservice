@@ -3,3 +3,41 @@ spring:
     name: order-service
   config:
     import: optional:configserver:http://localhost:8888
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: amit
+    password: amit
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
+server:
+  port: 8082
+
+jwt:
+  secret: mySuperSecretKeyForJwtTokenGenerationMySuperSecretKey12345
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      userServiceBreaker:
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
+  timelimiter:
+    instances:
+      userServiceBreaker:
+        timeoutDuration: 3s
