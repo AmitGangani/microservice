@@ -15,5 +15,25 @@ spring:
       ddl-auto: update
     show-sql: true
 
+  kafka:
+    bootstrap-servers: localhost:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+
 jwt:
   secret: mySuperSecretKeyForJwtTokenGenerationMySuperSecretKey12345
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      userServiceBreaker:
+        slidingWindowSize: 5
+        minimumNumberOfCalls: 3
+        failureRateThreshold: 50
+        waitDurationInOpenState: 10s
+        permittedNumberOfCallsInHalfOpenState: 2
+  timelimiter:
+    instances:
+      userServiceBreaker:
+        timeoutDuration: 3s
